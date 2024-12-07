@@ -37,22 +37,29 @@ git clone https://github.com/yourusername/AI-Powered-Code-Converter-and-Validato
 cd AI-Powered-Code-Converter-and-Validator
 
 Modify the code as needed for your specific conversion or validation task.
+
 Run the script:
 
 python main.py
 
 Example Workflow
+
 Convert Java Code to Python:
 
 Provide the Java snippet as input.
+
 Use the LLM to generate the equivalent Python code.
+
 Validate Python Code:
 
 Input Python code to the LLM.
+
 The LLM validates the code and explains any issues.
+
 Test Python Code:
 
 Pass Python scripts with specific inputs to test their functionality.
+
 Outputs are displayed in real-time.
 
 Code Example
@@ -60,6 +67,7 @@ Code Example
 from ctransformers import AutoModelForCausalLM
 
 # Load the model
+
 llm = AutoModelForCausalLM.from_pretrained(
     'TheBloke/Mistral-7B-Instruct-v0.2-GGUF',
     model_file='mistral-7b-instruct-v0.2.Q6_K.gguf'
@@ -77,17 +85,20 @@ if (number % 2 == 0) {
 prompt = f"Convert the following Java code to Python:\n{java_code}"
 
 # Generate Python code
+
 for word in llm(prompt, stream=True):
     print(word, end='')
 from ctransformers import AutoModelForCausalLM
 
 # Load the model
+
 llm = AutoModelForCausalLM.from_pretrained(
     'TheBloke/Mistral-7B-Instruct-v0.2-GGUF',
     model_file='mistral-7b-instruct-v0.2.Q6_K.gguf'
 )
 
 # Define the prompt for code conversion
+
 java_code = """
 int number = 5;
 if (number % 2 == 0) {
@@ -99,12 +110,15 @@ if (number % 2 == 0) {
 prompt = f"Convert the following Java code to Python:\n{java_code}"
 
 # Generate Python code
+
 for word in llm(prompt, stream=True):
     print(word, end='')
 
 Contributing
+
 Contributions are welcome! If you have suggestions or improvements, feel free to create a pull request or open an issue.
 
 Acknowledgments
+
 ctransformers library for seamless integration with LLMs.
 Mistral-7B-Instruct-v0.2 model for its robust code generation capabilities.
