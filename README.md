@@ -62,57 +62,6 @@ Pass Python scripts with specific inputs to test their functionality.
 
 Outputs are displayed in real-time.
 
-Code Example
-
-from ctransformers import AutoModelForCausalLM
-
-# Load the model
-
-llm = AutoModelForCausalLM.from_pretrained(
-    'TheBloke/Mistral-7B-Instruct-v0.2-GGUF',
-    model_file='mistral-7b-instruct-v0.2.Q6_K.gguf'
-)
-
-# Define the prompt for code conversion
-java_code = """
-int number = 5;
-if (number % 2 == 0) {
-    System.out.println(number + " is even.");
-} else {
-    System.out.println(number + " is odd.");
-}
-"""
-prompt = f"Convert the following Java code to Python:\n{java_code}"
-
-# Generate Python code
-
-for word in llm(prompt, stream=True):
-    print(word, end='')
-from ctransformers import AutoModelForCausalLM
-
-# Load the model
-
-llm = AutoModelForCausalLM.from_pretrained(
-    'TheBloke/Mistral-7B-Instruct-v0.2-GGUF',
-    model_file='mistral-7b-instruct-v0.2.Q6_K.gguf'
-)
-
-# Define the prompt for code conversion
-
-java_code = """
-int number = 5;
-if (number % 2 == 0) {
-    System.out.println(number + " is even.");
-} else {
-    System.out.println(number + " is odd.");
-}
-"""
-prompt = f"Convert the following Java code to Python:\n{java_code}"
-
-# Generate Python code
-
-for word in llm(prompt, stream=True):
-    print(word, end='')
 
 Contributing
 
